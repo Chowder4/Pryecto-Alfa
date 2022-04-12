@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prueba </title>
+    <script>
+        function comprobar(){
+            var pass=document.getElementById('pass').value;
+            var pass2=document.getElementById('pass2').value;
+            if(pass==pass2 && (pass || pass2 !="") && pass.length>4)
+                alert("ok");
+            else alert("not ok")
+        }
+    </script>
+    <link rel="stylesheet" href="output.css">
+</head>
+<body class=" m-0 bg-cover bg-fixed" style="background-image:url(imagenes/fondo-muro-oscuro_1390-191.jpg)">
+    <form action="inicio_sesion.php" method="post">
+        <div class=" container drop-shadow-xl border-2 border-slate-700  bg-gradient-to-b from-slate-800 to-slate-900 mx-auto mt-72 rounded-lg px-5 py-10  w-4/12">
+
+            
+            <div class="flex flex-col m-auto">
+                <div class="m-auto p-2">
+                    <input type="text "  class="m-auto" id="pass">
+                </div>
+                <div class="m-auto">
+                    <input type="text "  class="m-auto" id="pass2">
+                </div>
+                <div class="m-auto bg-slate-900 ">
+                    <button type="submit" onClick="comprobar()"  class="m-auto text-secondary">submit</button>
+                </div>
+            </div>
+        </div>
+            
+    </form>
+</body>
+</html>
