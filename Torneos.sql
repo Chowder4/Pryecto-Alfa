@@ -6,5 +6,10 @@ CREATE TABLE if not exists torneos (
 	ubicacion varchar (50),
 	dimension int,
 	codigo_torneo int,
+	 finalizado boolean,
 	primary key (id_torneo)
+);
+CREATE TABLE if not exists unirse_torneos(
+	id_torneo int,
+	id_usuario int
 );
