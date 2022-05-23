@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="crearEquipo.php" method="post">
+        <!-- CONTENEDOR -->
+        <div
+            class=" container drop-shadow-xl border-2 border-slate-700  bg-gradient-to-b from-slate-800 to-slate-900 mx-auto mt-10 rounded-lg px-5 py-10 sm:w-4/12">
+
+            <!-- CABECERA -->
+            <div class=" text-center font-mono text-5xl pb-4 text-slate-200">
+                <!--al instalar tailwind se pueden añadir fuentes -->
+                CREAR EQUIPO
+            </div>
+
+
+            <div class="flex flex-col m-auto">
+                <input type="text" id="f_nombre" name="f_nombre" placeholder="nombre"
+                    class="text-slate-200  rounded-md w-9/12 bg-slate-900 p-2 m-auto my-2">
+            </div>
+            <div class="flex flex-col m-auto">
+                <input type="number" name="f_dimension" id="f_dimension" placeholder="dimension"
+                    class="text-slate-200  rounded-md w-9/12 bg-slate-900 p-2 m-auto my-2">
+            </div>
+            <div class="flex flex-col m-auto">
+                <input type="text" name="f_ubicacion" id="f_ubicacion" placeholder="ubicacion"
+                    class="text-slate-200  rounded-md w-9/12 bg-slate-900 p-2 m-auto my-2">
+            </div>
+            <div class="flex flex-col m-auto">
+                <input type="text" name="f_tipo" id="f_tipo" placeholder="tipo"
+                    class="text-slate-200  rounded-md w-9/12 bg-slate-900 p-2 m-auto my-2">
+            </div>
+            <div class="flex flex-col m-auto">
+                <input type="password" name="f_password" id="f_password" placeholder="contraseña(opcional)"
+                    class="text-slate-200  rounded-md w-9/12 bg-slate-900 p-2 m-auto my-2">
+            </div>
+
+            <!-- SUBMIT Y CHECKEOS -->
+            <div class="flex flex-col m-auto">
+                <button type="submit"
+                    class="m-auto text-center w-9/12 p-2 mt-2 bg-emerald-200 rounded-md hover:scale-105 hover:bg-violet-600 duration-300 active:bg-violet-700">Crear</button>
+            </div>
+        </div>
+
+    </form>
+</body>
+
+</html>
