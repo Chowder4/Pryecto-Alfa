@@ -56,7 +56,10 @@
                 echo "<h1 class='text-3xl py-4 text-center'>$fila[nombre_equipo]</h1>";
             }
             ?>
-            
+            <form action="./cambiarEquipo.php" method="POST" class="flex flex-col">
+            <input type="text" name="nombre_equipo" id="nombre_equipo" class="border border-3 border-gray-900">
+            <input type="submit" value="Cambiar de equipo" class="border border-green-500 bg-green-500 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-green-600 focus:outline-none focus:shadow-outline">
+            </form>
 
         </div>
         <div class="flex flex-col p-4 ">
