@@ -7,6 +7,11 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Document</title>
     <?php
+        session_start();
+        if(!isset($_SESSION['usu']))
+ {
+    header("location:http://localhost/Pryecto-Alfa/index.html");	 
+ }
         include ("../conectar_base.php");    
     ?>
 </head>
@@ -47,7 +52,7 @@
                 WHERE v.nombre_videojuego NOT IN ( 
                     SELECT videojuego.nombre_videojuego 
                     FROM usuario_videojuego, videojuego 
-                    WHERE usuario_videojuego.id_usuario = 1 AND 
+                    WHERE usuario_videojuego.id_usuario = $_SESSION[usu] AND 
                     videojuego.id_videojuego = usuario_videojuego.id_videojuego 
                 );";
                 $registro=mysqli_query($conexion,$sql1) or die ("Error en la consulta $sql1"); 

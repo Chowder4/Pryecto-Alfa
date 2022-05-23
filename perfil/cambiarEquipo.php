@@ -1,4 +1,9 @@
 <?php 
+session_start();
+if(!isset($_SESSION['usu']))
+ {
+    header("location:http://localhost/Pryecto-Alfa/index.html");	 
+ }
 include("../conectar_base.php");
 $sql="SELECT * FROM equipos Where nombre='$_POST[nombre_equipo]'";
 $registro=mysqli_query($conexion,$sql) or die ("Error en la consulta $sql");
@@ -8,8 +13,9 @@ if($num==0){
     
 } else{
     
-    $sql3="UPDATE usuario as u
-    set u.nombre_equipo='$_POST[nombre_equipo]'";
+    $sql3="UPDATE usuario AS u
+    SET u.nombre_equipo='$_POST[nombre_equipo]'
+    WHERE u.id_usuario = $_SESSION[usu]";
     mysqli_query($conexion,$sql3) or die ("Error en la consulta $sql3");
      header("location:http://localhost/Pryecto-Alfa/perfil/");
 }

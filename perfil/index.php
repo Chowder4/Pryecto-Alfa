@@ -8,7 +8,12 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Document</title>
     <?php
+        session_start();
         include ("../conectar_base.php");    
+        if(!isset($_SESSION['usu']))
+ {
+    header("location:http://localhost/Pryecto-Alfa/index.html");	 
+ }
     ?>
 </head>
 
@@ -37,6 +42,10 @@
                         <a href="http://localhost/Pryecto-Alfa/videojuegos"
                             class="border-0 hover:text-blue-700 p-0 text-gray-900 hover:text-white hover:bg-transparent ">Videojuegos</a>
                     </li>
+                    <li>
+                        <a href="../logout.php"
+                            class="border-0 hover:text-blue-700 p-0 text-gray-900 hover:text-white hover:bg-transparent ">Cerrar Sesion</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -50,7 +59,7 @@
             <h1 class="text-3xl py-4 text-center">Equipo</h1>
             <?php
             
-        $sql1="SELECT * FROM usuario WHERE id_usuario = 1";
+        $sql1="SELECT * FROM usuario WHERE id_usuario = $_SESSION[usu]";
         $registro=mysqli_query($conexion,$sql1) or die ("Error en la consulta $sql1"); 
             while($fila = mysqli_fetch_array($registro)){
                 echo "<h1 class='text-3xl py-4 text-center'>$fila[nombre_equipo]</h1>";
@@ -69,7 +78,7 @@
             </div>
             
             <?php
-                $sql1="SELECT * FROM usuario WHERE id_usuario = 1";
+                $sql1="SELECT * FROM usuario WHERE id_usuario = $_SESSION[usu]";
                 $registro=mysqli_query($conexion,$sql1) or die ("Error en la consulta $sql1"); 
                 while($fila = mysqli_fetch_array($registro)){
                     echo "
@@ -91,7 +100,7 @@
             <?php
                 $sql1=" SELECT videojuego.nombre_videojuego
                 FROM usuario_videojuego, videojuego
-                WHERE usuario_videojuego.id_usuario = 1
+                WHERE usuario_videojuego.id_usuario = $_SESSION[usu]
                     AND videojuego.id_videojuego = usuario_videojuego.id_videojuego";
                 $registro=mysqli_query($conexion,$sql1) or die ("Error en la consulta $sql1"); 
                 while($fila = mysqli_fetch_array($registro)){
