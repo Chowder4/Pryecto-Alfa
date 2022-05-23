@@ -25,6 +25,10 @@
             <div class="w-full block w-auto" id="mobile-menu">
             <ul class="flex mt-4 flex-row space-x-8 mt-0 text-sm font-medium">
                     <li>
+                        <a href="http://localhost/Pryecto-Alfa/global"
+                            class="border-0 hover:text-blue-700 p-0 text-gray-900 hover:text-white hover:bg-transparent ">Global</a>
+                    </li>
+                    <li>
                         <a href="http://localhost/Pryecto-Alfa/perfil"
                             class="border-0 hover:text-blue-700 p-0 text-gray-900 hover:text-white hover:bg-transparent ">Perfil</a>
                     </li>

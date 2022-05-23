@@ -18,7 +18,7 @@
 </head>
 
 <body>
-    <nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 bg-gray-400">
+    <nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 bg-gray-400  shadow-xl">
         <div class="container flex flex-wrap justify-between items-center mx-auto">
             <a href="https://flowbite.com" class="flex items-center">
                 <img src="https://svgsilh.com/svg_v2/2962084.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo" />
@@ -26,6 +26,10 @@
             </a>
             <div class="w-full block w-auto" id="mobile-menu">
                 <ul class="flex mt-4 flex-row space-x-8 mt-0 text-sm font-medium">
+                    <li>
+                        <a href="http://localhost/Pryecto-Alfa/global"
+                            class="border-0 hover:text-blue-700 p-0 text-gray-900 hover:text-white hover:bg-transparent ">Global</a>
+                    </li>
                     <li>
                         <a href="http://localhost/Pryecto-Alfa/perfil"
                             class="border-0 hover:text-blue-700 p-0 text-gray-900 hover:text-white hover:bg-transparent ">Perfil</a>
@@ -50,8 +54,28 @@
             </div>
         </div>
     </nav>
+    <div class="flex flex-col p-4  my-10 mx-20  shadow-xl">
+            <div class="flex justify-center">
+<img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
+                class="w-32">
+            </div>
+            
+            <?php
+                $sql1="SELECT * FROM usuario WHERE id_usuario = $_SESSION[usu]";
+                $registro=mysqli_query($conexion,$sql1) or die ("Error en la consulta $sql1"); 
+                while($fila = mysqli_fetch_array($registro)){
+                    echo "
+                    <h1 class='text-gray-400 text-center'>$fila[nombre] $fila[apellido]</h1>
+                    <h1 class='text-3xl py-4 text-center'>$fila[nombre_usuario]</h1>
+                    <h1 class='text-center'>$fila[correo]</h1>
+                    <h1 class='text-center'>Level: $fila[nivel]</h1>";
+                }
+            ?>
+
+
+        </div>
     <div class="flex md:justify-between md:flex-row flex-col my-10 mx-20">
-        <div class="flex flex-col p-4 ">
+        <div class="flex flex-col pt-5 px-16 shadow-xl">
             <div class="flex justify-center">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUcv5KYiuNt3G2O2HonILbyyYQNwFLPsuucg&usqp=CAU"
                 class="w-32">
@@ -72,27 +96,8 @@
             </form>
 
         </div>
-        <div class="flex flex-col p-4 ">
-            <div class="flex justify-center">
-<img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
-                class="w-32">
-            </div>
-            
-            <?php
-                $sql1="SELECT * FROM usuario WHERE id_usuario = $_SESSION[usu]";
-                $registro=mysqli_query($conexion,$sql1) or die ("Error en la consulta $sql1"); 
-                while($fila = mysqli_fetch_array($registro)){
-                    echo "
-                    <h1 class='text-gray-400 text-center'>$fila[nombre] $fila[apellido]</h1>
-                    <h1 class='text-3xl py-4 text-center'>$fila[nombre_usuario]</h1>
-                    <h1 class='text-center'>$fila[correo]</h1>
-                    <h1 class='text-center'>Level: $fila[nivel]</h1>";
-                }
-            ?>
-
-
-        </div>
-        <div class="flex flex-col p-4 ">
+        
+        <div class="flex flex-col pt-5 px-16 shadow-xl">
             <div class="flex justify-center">
             <img src="https://cdn-icons-png.flaticon.com/512/75/75472.png" class="w-32">
             </div>
@@ -111,7 +116,7 @@
             <a href="./añadirVideojuego.php" class="border border-green-500 bg-green-500 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-green-600 focus:outline-none focus:shadow-outline">añadir juego</a>
 
         </div>
-        <div class="flex flex-col p-4 ">
+        <div class="flex flex-col pt-5 px-16 shadow-xl">
             <div class="flex justify-center">
             <img src="https://w7.pngwing.com/pngs/284/638/png-transparent-computer-icons-award-award-emblem-logo-tournament.png" class="w-32">
             </div>
