@@ -50,7 +50,7 @@
             </div>
         </div>
     </nav>
-    <div class="flex sm:justify-between sm:flex-row flex-col my-10 sm:mx-48">
+    <div class="flex md:justify-between md:flex-row flex-col my-10 mx-20">
         <div class="flex flex-col p-4 ">
             <div class="flex justify-center">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUcv5KYiuNt3G2O2HonILbyyYQNwFLPsuucg&usqp=CAU"
@@ -109,6 +109,25 @@
                 }
             ?>
             <a href="./añadirVideojuego.php" class="border border-green-500 bg-green-500 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-green-600 focus:outline-none focus:shadow-outline">añadir juego</a>
+
+        </div>
+        <div class="flex flex-col p-4 ">
+            <div class="flex justify-center">
+            <img src="https://w7.pngwing.com/pngs/284/638/png-transparent-computer-icons-award-award-emblem-logo-tournament.png" class="w-32">
+            </div>
+            <h1 class="text-3xl py-4 text-center">Torneos</h1>
+            
+            <?php
+                $sql1=" SELECT t.nombre
+                FROM unirse_torneos ut, torneos t
+                WHERE ut.id_usuario = $_SESSION[usu]
+                    AND ut.id_torneo = t.id_torneo";
+                $registro=mysqli_query($conexion,$sql1) or die ("Error en la consulta $sql1"); 
+                while($fila = mysqli_fetch_array($registro)){
+                    echo "<h1 class='text-xl text-center py-4'>$fila[nombre]</h1>";
+                }
+            ?>
+            <a href="./añadirTorneo.php" class="border border-green-500 bg-green-500 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-green-600 focus:outline-none focus:shadow-outline">unirse a torneo</a>
 
         </div>
     </div>

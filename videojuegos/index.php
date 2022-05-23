@@ -7,6 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Document</title>
+    <?php
+        session_start();
+        include ("../conectar_base.php");    
+        if(!isset($_SESSION['usu']))
+ {
+    header("location:http://localhost/Pryecto-Alfa/index.html");	 
+ }
+    ?>
 </head>
 
 <body>
@@ -34,11 +42,46 @@
                         <a href="http://localhost/Pryecto-Alfa/videojuegos"
                             class="border-0 hover:text-blue-700 p-0 text-gray-900 hover:text-white hover:bg-transparent ">Videojuegos</a>
                     </li>
+                    <li>
+                        <a href="../logout.php"
+                            class="border-0 hover:text-blue-700 p-0 text-gray-900 hover:text-white hover:bg-transparent ">Cerrar
+                            Sesion</a>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
-    fffffffffffff
+    <div class="flex justify-center mt-10">
+    <a href="./crearVideojuego.html" class="w-3/5 text-center text-3xl border border-green-500 bg-green-500 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-green-600 focus:outline-none focus:shadow-outline">Crear videojuego +</a>
+    </div>
+
+    <div  class="flex justify-center mt-10">
+    <table class="text-left w-4/5">
+		<thead class="bg-black flex text-white w-full">
+			<tr class="flex w-full mb-4">
+				<th class="p-4 w-1/4">Nombre</th>
+				<th class="p-4 w-1/4">Genero</th>
+				<th class="p-4 w-1/4">Pegi</th>
+				<th class="p-4 w-1/4">Empresa_desarrolladora</th>
+			</tr>
+		</thead>
+    <!-- Remove the nasty inline CSS fixed height on production and replace it with a CSS class — this is just for demonstration purposes! -->
+		<tbody class="bg-grey-light flex flex-col items-center  overflow-y-scroll w-full" style="height: 50vh;">
+        <?php
+                $sql1=" SELECT * FROM videojuego";
+                $registro=mysqli_query($conexion,$sql1) or die ("Error en la consulta $sql1"); 
+                while($fila = mysqli_fetch_array($registro)){
+                    echo "<tr class='flex w-full'>
+                    <td class='p-4 w-1/4'>$fila[nombre_videojuego]</td>
+                    <td class='p-4 w-1/4'>$fila[genero_videojuego]</td>
+                    <td class='p-4 w-1/4'>$fila[pegi]</td>
+                    <td class='p-4 w-1/4'>$fila[empresa_desarrolladora]</td>
+                </tr>";
+                }
+            ?>
+		</tbody>
+	</table>
+    </div>
 </body>
 
 </html>

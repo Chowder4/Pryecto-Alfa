@@ -51,20 +51,20 @@
     <div class="flex sm:justify-center sm:flex-row flex-col my-10 sm:mx-48">
         <div>
         <?php
-                $sql1=" SELECT v.nombre_videojuego, v.id_videojuego 
-                FROM videojuego v 
-                WHERE v.nombre_videojuego NOT IN ( 
-                    SELECT videojuego.nombre_videojuego 
-                    FROM usuario_videojuego, videojuego 
-                    WHERE usuario_videojuego.id_usuario = $_SESSION[usu] AND 
-                    videojuego.id_videojuego = usuario_videojuego.id_videojuego 
+                $sql1=" SELECT t.nombre, t.id_torneo 
+                FROM torneos t
+                WHERE t.nombre NOT IN ( 
+                    SELECT torneos.nombre 
+                    FROM unirse_torneos, torneos 
+                    WHERE unirse_torneos.id_usuario = $_SESSION[usu] AND 
+                    unirse_torneos.id_torneo = torneos.id_torneo 
                 );";
                 $registro=mysqli_query($conexion,$sql1) or die ("Error en la consulta $sql1"); 
                 while($fila = mysqli_fetch_array($registro)){
                     echo "
                     <div class='flex'>
-                    <h1 class='text-xl text-center py-4'>$fila[nombre_videojuego]</h1>
-                    <a href='./insertarVideojuego.php?id=$fila[id_videojuego]' class='border border-green-500 bg-green-500 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-green-600 focus:outline-none focus:shadow-outline'>añadir</a>
+                    <h1 class='text-xl text-center py-4'>$fila[nombre]</h1>
+                    <a href='./insertarTorneo.php?id=$fila[id_torneo]' class='border border-green-500 bg-green-500 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-green-600 focus:outline-none focus:shadow-outline'>añadir</a>
 
                     </div>";
     }
