@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Document</title>
+    <?php
+        include ("../conectar_base.php");    
+    ?>
 </head>
-
 <body>
-    <nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 bg-gray-400">
+<nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 bg-gray-400">
         <div class="container flex flex-wrap justify-between items-center mx-auto">
             <a href="https://flowbite.com" class="flex items-center">
                 <img src="https://svgsilh.com/svg_v2/2962084.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo" />
@@ -38,7 +39,28 @@
             </div>
         </div>
     </nav>
-    bbbbbbbbbb
-</body>
+    <div class="flex sm:justify-center sm:flex-row flex-col my-10 sm:mx-48">
+        <div>
+        <?php
+                $sql1=" SELECT v.nombre_videojuego, v.id_videojuego 
+                FROM videojuego v 
+                WHERE v.nombre_videojuego NOT IN ( 
+                    SELECT videojuego.nombre_videojuego 
+                    FROM usuario_videojuego, videojuego 
+                    WHERE usuario_videojuego.id_usuario = 1 AND 
+                    videojuego.id_videojuego = usuario_videojuego.id_videojuego 
+                );";
+                $registro=mysqli_query($conexion,$sql1) or die ("Error en la consulta $sql1"); 
+                while($fila = mysqli_fetch_array($registro)){
+                    echo "
+                    <div class='flex'>
+                    <h1 class='text-xl text-center py-4'>$fila[nombre_videojuego]</h1>
+                    <a href='./insertarVideojuego.php?id=$fila[id_videojuego]' class='border border-green-500 bg-green-500 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-green-600 focus:outline-none focus:shadow-outline'>añadir</a>
 
+                    </div>";
+    }
+            ?>
+        </div>
+    </div>
+</body>
 </html>
