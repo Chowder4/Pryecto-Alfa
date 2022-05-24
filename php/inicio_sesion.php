@@ -6,6 +6,6 @@ $num=mysqli_num_rows($registro);
 if($num==0){
     echo "Falso";
 } else
-    header("location:./Paginaguay.html");
+    header("location:./index.html");
 
 ?>

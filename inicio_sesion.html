@@ -5,16 +5,52 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio Sesion</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <title>Inicio de seson</title>
 </head>
 
-<body class=" m-0 bg-cover bg-fixed" style="background-image:url(imagenes/fondo-muro-oscuro_1390-191.jpg)">
-
-    <form action="php/inicio_sesion.php" method="post">
+<body class=" m-0 bg-cover bg-fixed bg-gradient-to-b from-zinc-800 to-gray-900">
+    <nav class="border-b-2 border-gray-200 px-2 sm:px-4 py-2.5 bg-gradient-to-t from-emerald-500 to-emerald-700 w-full">
+        <div class="container flex flex-wrap justify-between items-center mx-auto">
+            <a href="./index.html" class="flex items-center">
+                <img src="https://svgsilh.com/svg_v2/2962084.svg" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo" />
+                <span class="self-center text-xl font-semibold whitespace-nowrap text-slate-200">SocialGames</span>
+            </a>
+            <div class="w-full block w-auto" id="mobile-menu">
+                <ul class="flex mt-4 flex-row space-x-8 mt-0 text-sm font-medium">
+                    <li>
+                        <a href="http://localhost/Pryecto-Alfa/global"
+                            class="border-0 hover:text-blue-700 p-0 text-slate-200 hover:text-emerald-200 duration-200 hover:bg-transparent ">Global</a>
+                    </li>
+                    <li>
+                        <a href="http://localhost/Pryecto-Alfa/perfil"
+                            class="border-0 hover:text-blue-700 p-0 text-slate-200 hover:text-emerald-200 duration-200 hover:bg-transparent ">Perfil</a>
+                    </li>
+                    <li>
+                        <a href="http://localhost/Pryecto-Alfa/torneos"
+                            class="border-0 hover:text-blue-700 p-0 text-slate-200 hover:text-emerald-200 duration-200 hover:bg-transparent ">Torneos</a>
+                    </li>
+                    <li>
+                        <a href="http://localhost/Pryecto-Alfa/equipos"
+                            class="border-0 hover:text-blue-700 p-0 text-slate-200 hover:text-emerald-200 duration-200 hover:bg-transparent ">Equipos</a>
+                    </li>
+                    <li>
+                        <a href="http://localhost/Pryecto-Alfa/videojuegos"
+                            class="border-0 hover:text-blue-700 p-0 text-slate-200 hover:text-emerald-200 duration-200 hover:bg-transparent ">Videojuegos</a>
+                    </li>
+                    <li>
+                        <a href="../logout.php"
+                            class="border-0 hover:text-blue-700 p-0 text-slate-200 hover:text-emerald-200 duration-200 hover:bg-transparent ">Cerrar
+                            Sesion</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <form action="login.php" method="post">
         <!-- CONTENEDOR -->
         <div
-            class=" container drop-shadow-xl border-2 border-slate-700  bg-gradient-to-b from-slate-800 to-slate-900 mx-auto mt-72 rounded-lg px-5 py-10 w-4/12">
+            class=" container drop-shadow-xl border-2 border-slate-200  bg-gradient-to-b from-slate-800 to-slate-900 mx-auto mt-10 rounded-lg px-5 py-10 sm:w-4/12">
 
             <!-- CABECERA -->
             <div class=" text-center font-mono text-5xl text-slate-200">
@@ -58,5 +94,4 @@
 
     </form>
 </body>
-
 </html>
