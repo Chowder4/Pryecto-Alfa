@@ -12,16 +12,16 @@
         include ("../conectar_base.php");    
         if(!isset($_SESSION['usu']))
  {
-    header("location:http://localhost/Pryecto-Alfa/index.html");	 
+    header("location:http://localhost/Pryecto-Alfa/inicio_sesion.html");	 
  }
     ?>
 </head>
 
-<body>
+<body class=" m-0 bg-cover bg-fixed bg-gradient-to-b from-zinc-800 to-gray-900">
     <form action="crearTorneo.php" method="post">
         <!-- CONTENEDOR -->
         <div
-            class=" container drop-shadow-xl border-2 border-slate-700  bg-gradient-to-b from-slate-800 to-slate-900 mx-auto mt-10 rounded-lg px-5 py-10 sm:w-4/12">
+        class=" container drop-shadow-xl border-2 border-slate-200  bg-gradient-to-b from-slate-800 to-slate-900 mx-auto mt-10 rounded-lg px-5 py-10 sm:w-4/12">
 
             <!-- CABECERA -->
             <div class=" text-center font-mono text-5xl pb-4 text-slate-200">

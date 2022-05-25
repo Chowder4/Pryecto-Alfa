@@ -2,7 +2,7 @@
         session_start();
         if(!isset($_SESSION['usu']))
  {
-    header("location:http://localhost/Pryecto-Alfa/index.html");	 
+    header("location:http://localhost/Pryecto-Alfa/inicio_sesion.html");	 
  }
 include ("../conectar_base.php");
 $sql1="SELECT * FROM usuario_videojuego WHERE id_usuario=$_SESSION[usu] AND id_videojuego = $_GET[id]";

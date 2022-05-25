@@ -10,7 +10,7 @@
         session_start();
         if(!isset($_SESSION['usu']))
  {
-    header("location:http://localhost/Pryecto-Alfa/index.html");	 
+    header("location:http://localhost/Pryecto-Alfa/inicio_sesion.html");	 
  }
         include ("../conectar_base.php");    
     ?>

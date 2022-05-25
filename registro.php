@@ -8,7 +8,7 @@ $sql="INSERT INTO usuario (nombre, apellido, nombre_usuario, clave, correo, tele
 values ('$_POST[r_nombre]', '$_POST[r_apellidos]',
 '$_POST[r_usuario]', '$_POST[r_pass1]','$_POST[r_email]','$_POST[r_telefono]',NULL,NULL,1)";
 mysqli_query($conexion,$sql) or die ("Error en la consulta $sql");
-header("location:./index.html");
+header("location:./inicio_sesion.html");
 }else
 echo"nombre usuario o correo ya escogidos";
 ?>
