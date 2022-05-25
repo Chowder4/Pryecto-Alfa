@@ -6,10 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>Registro</title>
+    <title>Inicio de seson</title>
 </head>
 
-<body class="bg-gradient-to-b from-zinc-800 to-gray-900 bg-fixed">
+<body class=" m-0 bg-cover bg-fixed bg-gradient-to-b from-zinc-800 to-gray-900">
     <nav class="border-b-2 border-gray-200 px-2 sm:px-4 py-2.5 bg-gradient-to-t from-emerald-500 to-emerald-700 w-full">
         <div class="container flex flex-wrap justify-between items-center mx-auto">
             <a href="./index.html" class="flex items-center">
@@ -47,67 +47,51 @@
             </div>
         </div>
     </nav>
-    <form action="registro.php" method="post">
-        <!-- CONTAINER -->
+    <form action="login.php" method="post">
+        <!-- CONTENEDOR -->
         <div
-            class="container drop-shadow-xl border-2 border-slate-200  bg-gradient-to-b from-slate-800 to-slate-900 mx-auto mt-10 rounded-lg px-5 py-10 sm:w-4/12">
-            <!-- UNETE A LA FAMILIA -->
+            class=" container drop-shadow-xl border-2 border-slate-200  bg-gradient-to-b from-slate-800 to-slate-900 mx-auto mt-10 rounded-lg px-5 py-10 sm:w-4/12">
 
+            <!-- CABECERA -->
             <div class=" text-center font-mono text-5xl text-slate-200">
-                ¡Únete a la familia!
-            </div>
-            <!-- NOMBRE -->
-
-            <div class="flex flex-col m-auto">
-                <input type="text" id="r_nombre" name="r_nombre" placeholder="Nombre"
-                    class="text-slate-200  rounded-md w-10/12 bg-slate-900 p-2 m-auto my-2">
-            </div>
-            <!-- APELLIDO -->
-
-            <div class="flex flex-col m-auto">
-                <input type="text" name="r_apellidos" id="r_apellidos" placeholder="Apellidos"
-                    class="text-slate-200  rounded-md w-10/12 bg-slate-900 p-2 m-auto my-2">
-            </div>
-            <!-- EMAIL -->
-
-            <div class="flex flex-col m-auto">
-                <input type="email" id="r_email" name="r_email" placeholder="e-mail"
-                    class="text-slate-200  rounded-md w-10/12 bg-slate-900 p-2 m-auto my-2">
+                <!--al instalar tailwind se pueden añadir fuentes -->
+                ¡Hola!
             </div>
 
-            <div class="flex flex-col m-auto">
-                <input type="number" id="r_telefono" name="r_telefono" placeholder="telefono"
-                    class="text-slate-200  rounded-md w-10/12 bg-slate-900 p-2 m-auto my-2">
+            <!-- CABECERA 2 -->
+            <div class="p-2 text-center font-mono text-m text-slate-200">
+                ¡Estamos encantados de tenerte de vuelta!
             </div>
-            <!-- NOMBRE USUARIO -->
 
+            <!-- USUARIO -->
             <div class="flex flex-col m-auto">
-                <input type="text" id="r_usuario" name="r_usuario" placeholder="Nombre de usuario"
-                    class="text-slate-200  rounded-md w-10/12 bg-slate-900 p-2 m-auto my-2">
+                <input type="text" name="f_usuario" placeholder="Usuario"
+                    class="text-slate-200  rounded-md w-9/12 bg-slate-900 p-2 m-auto my-2">
+                <!-- centrar inputs. No funciona mx-auto-->
             </div>
+
             <!-- CONTRASEÑA -->
-
             <div class="flex flex-col m-auto">
-                <input type="password" id="r_pass1" name="r_pass1" placeholder="Contraseña"
-                    class="text-slate-200  rounded-md w-10/12 bg-slate-900 p-2 m-auto my-2">
+                <input type="password" id="f_pasw" name="f_pasw" placeholder="Contraseña"
+                    class="ttext-slate-200  rounded-md w-9/12 bg-slate-900 p-2 m-auto my-2">
             </div>
-            <!-- SUBMIT Y CHECKEOS -->
 
+            <!-- SUBMIT Y CHECKEOS -->
             <div class="flex flex-col m-auto">
                 <button type="submit"
-                    class="text-center w-9/12 p-2 m-auto mt-2 bg-emerald-200 rounded-md hover:scale-105 hover:bg-violet-600 duration-300 active:bg-violet-700">Registrarse</button>
+                    class="m-auto text-center w-9/12 p-2 mt-2 bg-emerald-200 rounded-md hover:scale-105 hover:bg-violet-600 duration-300 active:bg-violet-700">Iniciar
+                    sesión</button>
             </div>
-            <!-- INICIO SESION  -->
 
-            <p class="text-slate-200 mt-4 m-auto">
-                ¿Ya tienes una cuenta? <a class="link text-cyan-700 hover:text-cyan-800 active:text-cyan-900" <<<<<<<
-                    HEAD href="./index.html">Inicia sesión.</a>
-                =======
-                href="./inicio_sesion.html">Inicia sesión.</a>
-                >>>>>>> main
-            </p>
+            <!-- REGISTRO -->
+            <div class="flex flex-row">
+                <p class="text-slate-200 mt-4 mx-auto">
+                    ¿No tienes una cuenta? <a class="link text-cyan-700 hover:text-cyan-800 active:text-cyan-900"
+                        href="registro.html">Regístrate.</a>
+                </p>
+            </div>
         </div>
+
     </form>
 </body>
-
 </html>
