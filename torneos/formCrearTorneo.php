@@ -26,7 +26,7 @@
             <!-- CABECERA -->
             <div class=" text-center font-mono text-5xl pb-4 text-slate-200">
                 <!--al instalar tailwind se pueden añadir fuentes -->
-                CREAR EQUIPO
+                CREAR TORNEO
             </div>
 
 

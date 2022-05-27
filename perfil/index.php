@@ -86,8 +86,8 @@
             }
             ?>
             <form action="./cambiarEquipo.php" method="POST" class="flex flex-col">
-            <input type="text" name="nombre_equipo" id="nombre_equipo" class="border border-3 border-gray-900 rounded my-2 py-2" placeholder="nombre equipo">
-            <input type="text" name="contraseña_equipo" id="contraseña_equipo" class="border border-3 border-gray-900 rounded my-2 py-2" placeholder="contraseña">
+            <input type="text" name="nombre_equipo" id="nombre_equipo" class="border border-3 border-gray-900 rounded my-2 py-2 text-gray-900" placeholder="nombre equipo">
+            <input type="text" name="contraseña_equipo" id="contraseña_equipo" class="border border-3 border-gray-900 rounded my-2 py-2 text-gray-900" placeholder="contraseña">
             <input type="submit" value="Cambiar de equipo" class="border border-green-500 bg-green-500 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-green-600 focus:outline-none focus:shadow-outline">
             </form>
 
