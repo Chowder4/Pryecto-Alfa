@@ -1,4 +1,4 @@
------ CREADO POR NOE MOROS, DIEGO BLAS, DANIEL LACAMBRA, ANGEL CANSAS Y JUAN PABLO SANTOS -----
+----- CREADO POR NOE MOROS, DIEGO BLAS, DANIEL LACAMBRA, ANGEL CASANS Y JUAN PABLO SANTOS -----
 # SOCIALGAMES
 
 SOCIALGAMES es una plataforma donde todos los videojugadores pueden conectarse para conocer nuevas personas
